@@ -1,5 +1,9 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 
+const dbString = process.env.DB_KEY;
+
+mongoose.connect(dbString);
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
